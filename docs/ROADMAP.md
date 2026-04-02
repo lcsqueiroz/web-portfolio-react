@@ -26,8 +26,8 @@ Este documento detalha o plano de desenvolvimento dividido por semanas, com meta
 - [x] Configurar ESLint
 - [x] Criar estrutura de pastas conforme arquitetura
 - [x] Instalar React Router DOM
-- [ ] Criar `constants/projects.js` com dados reais dos projetos
-- [ ] Criar `constants/skills.js` com habilidades reais
+- [x] Criar `constants/projects.js` com dados reais dos projetos
+- [x] Criar `constants/skills.js` com habilidades reais
 - [ ] Criar `routes/index.jsx` com roteamento básico
 - [ ] Conectar `BrowserRouter` e `AppRoutes` no `App.jsx`
 - [ ] Criar `pages/Home/index.jsx` e `pages/NotFound/index.jsx` (esqueleto)
