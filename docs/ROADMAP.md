@@ -30,7 +30,7 @@ Este documento detalha o plano de desenvolvimento dividido por semanas, com meta
 - [x] Criar `constants/skills.js` com habilidades reais
 - [x] Criar `routes/index.jsx` com roteamento básico
 - [x] Conectar `BrowserRouter` e `AppRoutes` no `App.jsx`
-- [ ] Criar `pages/Home/index.jsx` e `pages/NotFound/index.jsx` (esqueleto)
+- [x] Criar `pages/Home/index.jsx` e `pages/NotFound/index.jsx` (esqueleto)
 
 **Critério de conclusão:** `npm run dev` abre uma página em branco sem erros no console. Acessar uma URL inválida exibe a página NotFound.
 
