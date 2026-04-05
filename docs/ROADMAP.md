@@ -42,7 +42,7 @@ Este documento detalha o plano de desenvolvimento dividido por semanas, com meta
 
 ### Tarefas
 
-- [ ] Criar atom `Button` com suporte a variantes e estado `disabled`
+- [x] Criar atom `Button` com suporte a variantes e estado `disabled`
 - [ ] Criar `context/ThemeContext.jsx` com `ThemeProvider` e hook `useTheme`
 - [ ] Envolver a aplicação com `ThemeProvider` no `App.jsx`
 - [ ] Criar organism `Navbar` com menu hamburguer no mobile e toggle de tema
