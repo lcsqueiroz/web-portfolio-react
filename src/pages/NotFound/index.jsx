@@ -1,4 +1,4 @@
-function NotFound() {
+const NotFound = () => {
   return (
     <main>
       <section aria-labelledby="error-heading">
@@ -15,6 +15,6 @@ function NotFound() {
       </section>
     </main>
   );
-}
+};
 
 export default NotFound;
