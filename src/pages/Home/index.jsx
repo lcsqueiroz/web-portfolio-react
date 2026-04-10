@@ -1,9 +1,10 @@
+import Navbar from '../../components/organisms/Navbar';
 const Home = () => {
   return (
-    <main>
-      <h1>Página Inicial</h1>
-      {/* Dentro do main conterá todos os organism */}
-    </main>
+    <>
+      <Navbar />
+      <main></main>
+    </>
   );
 };
 export default Home;
