@@ -46,7 +46,7 @@ Este documento detalha o plano de desenvolvimento dividido por semanas, com meta
 - [x] Criar `context/ThemeContext.jsx` com `ThemeProvider` e hook `useTheme`
 - [x] Envolver a aplicação com `ThemeProvider` no `App.jsx`
 - [x] Criar organism `Navbar` com menu hamburguer no mobile e toggle de tema
-- [ ] Criar organism `HeroSection` com nome, cargo, CTA e links sociais
+- [x] Criar organism `HeroSection` com nome, cargo, CTA e links sociais
 - [ ] Criar organism `Footer` com ano dinâmico e links
 - [ ] Garantir responsividade em 375px e 1280px
 
