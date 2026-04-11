@@ -1,9 +1,13 @@
 import Navbar from '../../components/organisms/Navbar';
+import HeroSection from '../../components/organisms/HeroSection';
+
 const Home = () => {
   return (
     <>
       <Navbar />
-      <main></main>
+      <main>
+        <HeroSection />
+      </main>
     </>
   );
 };
