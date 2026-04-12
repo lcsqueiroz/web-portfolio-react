@@ -4,6 +4,11 @@
   --color-primary-hover: #2563eb;
   --color-primary-light: #eff6ff;
 
+  /* Redes sociais */
+  --color-github-hover: #000000;
+  --color-google-hover: #ea4335;
+  --color-linkedin-hover: #0a66c2;
+
   /* Texto */
   --color-text: #111827;
   --color-text-secondary: #374151;
@@ -46,5 +51,6 @@
   --z-sticky: 50;
 
   /* Transições */
-  --transition-colors: color 150ms ease, background-color 150ms ease, border-color 150ms ease;
+  --transition-colors:
+    color 150ms ease, background-color 150ms ease, border-color 150ms ease;
 }
