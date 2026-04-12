@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaGoogle } from 'react-icons/fa';
 import { personal } from '../../../constants/personal';
 import { navLinks } from '../../../constants/navigation';
 import styles from './index.module.css';
@@ -34,7 +34,7 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className={styles.socialLink}
+              className={`${styles.socialLink} ${styles.socialLinkGithub}`}
             >
               <FaGithub size={22} />
             </a>
@@ -46,6 +46,15 @@ const Navbar = () => {
               className={`${styles.socialLink} ${styles.socialLinkLinkedin}`}
             >
               <FaLinkedin size={22} />
+            </a>
+            <a
+              href={personal.emailUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="E-mail"
+              className={`${styles.socialLink} ${styles.socialLinkGoogle}`}
+            >
+              <FaGoogle size={22} />
             </a>
           </div>
 
@@ -84,7 +93,7 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className={styles.socialLink}
+              className={`${styles.socialLink} ${styles.socialLinkGithub}`}
             >
               <FaGithub size={22} />
             </a>
@@ -96,6 +105,15 @@ const Navbar = () => {
               className={`${styles.socialLink} ${styles.socialLinkLinkedin}`}
             >
               <FaLinkedin size={22} />
+            </a>
+            <a
+              href={personal.emailUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="E-mail"
+              className={`${styles.socialLink} ${styles.socialLinkGoogle}`}
+            >
+              <FaGoogle size={22} />
             </a>
           </div>
         </div>

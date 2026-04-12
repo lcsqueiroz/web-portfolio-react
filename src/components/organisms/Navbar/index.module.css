@@ -62,12 +62,16 @@
   align-items: center;
 }
 
-.socialLink:hover {
-  color: var(--color-text);
+.socialLinkGithub:hover {
+  color: var(--color-github-hover);
 }
 
 .socialLinkLinkedin:hover {
-  color: var(--color-primary);
+  color: var(--color-linkedin-hover);
+}
+
+.socialLinkGoogle:hover {
+  color: var(--color-google-hover);
 }
 
 /* Botão hamburguer */
