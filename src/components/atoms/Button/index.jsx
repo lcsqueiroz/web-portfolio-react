@@ -1,7 +1,9 @@
-const BUTTON_VARIANTS = {
-  primary: 'bg-blue-500 text-white hover:bg-blue-600',
-  secondary: 'bg-gray-500 text-white hover:bg-gray-600',
-  ghost: 'border border-blue-500 text-blue-500 hover:bg-blue-50',
+import styles from './index.module.css';
+
+const VARIANT_CLASSES = {
+  primary: styles.primary,
+  secondary: styles.secondary,
+  ghost: styles.ghost,
 };
 
 const Button = ({
@@ -11,15 +13,12 @@ const Button = ({
   disabled = false,
   type = 'button',
 }) => {
-  const variantClass = BUTTON_VARIANTS[variant];
-  const disabledClass = disabled ? 'opacity-50 cursor-not-allowed' : '';
-
   return (
     <button
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={`px-4 py-2 rounded ml-1 cursor-pointer ${variantClass} ${disabledClass}`}
+      className={`${styles.button} ${VARIANT_CLASSES[variant]} ${disabled ? styles.disabled : ''}`}
     >
       {label}
     </button>

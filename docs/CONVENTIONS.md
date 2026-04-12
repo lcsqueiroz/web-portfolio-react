@@ -15,7 +15,7 @@ Este documento define os padrões que devem ser seguidos em todo o projeto para 
 | Contextos           | PascalCase + sufixo `Context`  | `context/ThemeContext.jsx`     |
 | Páginas             | PascalCase em pasta própria    | `pages/Home/index.jsx`         |
 
-> Cada componente fica em sua própria pasta (`Button/index.jsx`) em vez de um arquivo solto (`Button.jsx`). Isso facilita adicionar arquivos relacionados no futuro (ex: testes, estilos locais) sem poluir a pasta pai.
+> Cada componente fica em sua própria pasta (`Button/index.jsx`) em vez de um arquivo solto (`Button.jsx`). O arquivo de estilos do componente (`index.module.css`) fica na mesma pasta. Isso mantém o componente e seus estilos colocalizados sem poluir a pasta pai.
 
 ---
 
@@ -181,6 +181,91 @@ Todo link que abre em nova aba deve ter o atributo `rel` por segurança:
 ```
 
 > `noopener` impede que a página aberta acesse `window.opener`. `noreferrer` evita o envio do cabeçalho `Referer`. Ambos são necessários para segurança.
+
+---
+
+## CSS Modules
+
+Cada componente que possui estilo próprio deve ter um arquivo `index.module.css` na mesma pasta que seu `index.jsx`.
+
+### Estrutura de arquivos
+
+```
+components/atoms/Button/
+├── index.jsx
+└── index.module.css
+```
+
+### Importação e uso
+
+```jsx
+import styles from './index.module.css';
+
+const Button = ({ label }) => (
+  <button className={styles.button}>{label}</button>
+);
+```
+
+### Nomenclatura de classes
+
+Classes CSS dentro de módulos devem usar **camelCase**:
+
+```css
+/* Correto */
+.buttonPrimary { }
+.isActive { }
+.menuWrapper { }
+
+/* Errado */
+.button-primary { }
+.is-active { }
+.menu_wrapper { }
+```
+
+### Classes condicionais
+
+Para combinar classes condicionalmente, use template literals ou concatenação simples — sem bibliotecas externas:
+
+```jsx
+// Uma condição
+<button className={`${styles.button} ${disabled ? styles.disabled : ''}`}>
+
+// Variante selecionada de um objeto de mapeamento
+const VARIANT_CLASSES = {
+  primary: styles.primary,
+  secondary: styles.secondary,
+  ghost: styles.ghost,
+};
+
+<button className={`${styles.button} ${VARIANT_CLASSES[variant]}`}>
+```
+
+### Estilos globais e variáveis
+
+Tokens de design (cores, espaçamentos, tipografia) ficam em `src/styles/global.css` como custom properties CSS e são aplicados no seletor `:root`:
+
+```css
+/* src/styles/global.css */
+:root {
+  --color-primary: #3b82f6;
+  --color-text: #111827;
+  --color-text-muted: #6b7280;
+  --color-bg: #ffffff;
+  --color-border: #f3f4f6;
+}
+```
+
+Os módulos individuais consomem essas variáveis diretamente:
+
+```css
+/* index.module.css */
+.button {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+}
+```
+
+> Nunca repita valores literais de cor ou tamanho em módulos individuais — sempre referencie uma variável de `global.css`. Isso garante consistência e facilita mudanças de tema.
 
 ---
 

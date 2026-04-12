@@ -24,7 +24,7 @@ Atoms são a menor unidade da interface. Não têm lógica de negócio — apena
 | `disabled` | boolean  | Não         | `false`     | Desabilita o botão                             |
 | `type`     | string   | Não         | `'button'`  | Tipo HTML: `'button'` ou `'submit'`            |
 
-**Comportamento:** Renderiza um `<button>` com classes Tailwind condicionais baseadas em `variant` e `disabled`. Quando `disabled` é `true`, o botão não responde a cliques e recebe estilo visual de inativo.
+**Comportamento:** Renderiza um `<button>` com classes CSS condicionais baseadas em `variant` e `disabled`, aplicadas via CSS Modules. Quando `disabled` é `true`, o botão não responde a cliques e recebe estilo visual de inativo.
 
 ---
 

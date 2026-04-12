@@ -150,17 +150,26 @@ const { filteredProjects, activeFilter, filters, handleFilterChange } =
 
 Abordagem **Mobile-First**: estilos base para mobile, breakpoints adicionam ou sobrescrevem para telas maiores.
 
-### Breakpoints (Tailwind CSS)
+### Breakpoints
 
-| Prefixo | Largura mínima | Contexto |
-| ------- | -------------- | -------- |
-| base    | 320px          | Mobile   |
-| `md:`   | 768px          | Tablet   |
-| `lg:`   | 1024px         | Desktop  |
+| Largura mínima | Contexto |
+| -------------- | -------- |
+| 320px          | Mobile   |
+| 768px          | Tablet   |
+| 1024px         | Desktop  |
 
-```jsx
-// Exemplo: coluna no mobile, linha no desktop
-<div className="flex flex-col md:flex-row">
+```css
+/* Exemplo: coluna no mobile, linha no desktop */
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+}
 ```
 
 ### Comportamento por breakpoint
