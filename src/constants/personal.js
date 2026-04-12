@@ -7,7 +7,7 @@ const emailBody = encodeURIComponent(
 );
 
 export const personal = {
-  name: 'Lucas Queiroz Vieira',
+  name: 'Lucas Q. Vieira',
   role: 'Desenvolvedor Frontend',
   bio: 'Sou estudante de Ciência da Computação e Estagiário em Desenvolvimento de Software, onde atuo desenvolvendo sistemas web. Atualmente, foco em desenvolvimento web utilizando React.',
   photoUrl: profilePhoto,

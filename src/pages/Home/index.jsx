@@ -8,8 +8,8 @@ const Home = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <Footer />
       </main>
+      <Footer />
     </>
   );
 };
