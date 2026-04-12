@@ -1,5 +1,6 @@
 import Navbar from '../../components/organisms/Navbar';
 import HeroSection from '../../components/organisms/HeroSection';
+import Footer from '../../components/organisms/Footer';
 
 const Home = () => {
   return (
@@ -7,6 +8,7 @@ const Home = () => {
       <Navbar />
       <main>
         <HeroSection />
+        <Footer />
       </main>
     </>
   );
