@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FaGithub, FaLinkedin, FaGoogle } from 'react-icons/fa';
 import { personal } from '../../../constants/personal';
 import { navLinks } from '../../../constants/navigation';
@@ -6,9 +6,30 @@ import styles from './index.module.css';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
   const handleMenuToggle = () => setIsMenuOpen((prev) => !prev);
   const handleMenuClose = () => setIsMenuOpen(false);
+
+  useEffect(() => {
+    const sections = navLinks
+      .map((link) => document.querySelector(link.href))
+      .filter(Boolean);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(`#${entry.target.id}`);
+          }
+        });
+      },
+      { rootMargin: '0px 0px -80% 0px', threshold: 0 },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <header className={styles.header}>
@@ -19,7 +40,11 @@ const Navbar = () => {
         {/* Zona central — Links de navegação (desktop) */}
         <nav className={styles.navDesktop}>
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className={styles.navLink}>
+            <a
+              key={link.href}
+              href={link.href}
+              className={`${styles.navLink} ${activeSection === link.href ? styles.navLinkActive : ''}`}
+            >
               {link.label}
             </a>
           ))}
@@ -79,7 +104,7 @@ const Navbar = () => {
                 key={link.href}
                 href={link.href}
                 onClick={handleMenuClose}
-                className={styles.navLinkMobile}
+                className={`${styles.navLinkMobile} ${activeSection === link.href ? styles.navLinkMobileActive : ''}`}
               >
                 {link.label}
               </a>
