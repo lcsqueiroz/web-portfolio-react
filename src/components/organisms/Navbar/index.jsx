@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { personal } from '../../../constants/personal';
 import { navLinks } from '../../../constants/navigation';
+import styles from './index.module.css';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,34 +11,30 @@ const Navbar = () => {
   const handleMenuClose = () => setIsMenuOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
-      <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+    <header className={styles.header}>
+      <div className={styles.inner}>
         {/* Zona esquerda — Logo */}
-        <span className="font-bold text-lg text-gray-900">{personal.name}</span>
+        <span className={styles.logo}>{personal.name}</span>
 
         {/* Zona central — Links de navegação (desktop) */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className={styles.navDesktop}>
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors"
-            >
+            <a key={link.href} href={link.href} className={styles.navLink}>
               {link.label}
             </a>
           ))}
         </nav>
 
         {/* Zona direita — Redes sociais + hamburguer */}
-        <div className="flex items-center gap-4">
+        <div className={styles.rightZone}>
           {/* Ícones sociais (desktop) */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className={styles.socialDesktop}>
             <a
               href={personal.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="text-gray-400 hover:text-gray-900 transition-colors"
+              className={styles.socialLink}
             >
               <FaGithub size={22} />
             </a>
@@ -46,7 +43,7 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="text-gray-400 hover:text-blue-600 transition-colors"
+              className={`${styles.socialLink} ${styles.socialLinkLinkedin}`}
             >
               <FaLinkedin size={22} />
             </a>
@@ -57,7 +54,7 @@ const Navbar = () => {
             onClick={handleMenuToggle}
             aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
             aria-expanded={isMenuOpen}
-            className="md:hidden p-2 rounded text-gray-500 hover:bg-gray-100 transition-colors"
+            className={styles.hamburger}
           >
             {isMenuOpen ? '✕' : '☰'}
           </button>
@@ -66,14 +63,14 @@ const Navbar = () => {
 
       {/* Menu mobile */}
       {isMenuOpen && (
-        <div className="md:hidden border-t border-gray-100 px-6 py-4 flex flex-col gap-4">
-          <nav className="flex flex-col gap-3">
+        <div className={styles.menuMobile}>
+          <nav className={styles.navMobile}>
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={handleMenuClose}
-                className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors py-1"
+                className={styles.navLinkMobile}
               >
                 {link.label}
               </a>
@@ -81,13 +78,13 @@ const Navbar = () => {
           </nav>
 
           {/* Ícones sociais (mobile) */}
-          <div className="flex items-center gap-6 pt-2 border-t border-gray-100">
+          <div className={styles.socialMobile}>
             <a
               href={personal.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="text-gray-400 hover:text-gray-900 transition-colors"
+              className={styles.socialLink}
             >
               <FaGithub size={22} />
             </a>
@@ -96,7 +93,7 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="text-gray-400 hover:text-blue-600 transition-colors"
+              className={`${styles.socialLink} ${styles.socialLinkLinkedin}`}
             >
               <FaLinkedin size={22} />
             </a>

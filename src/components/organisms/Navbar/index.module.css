@@ -1,0 +1,142 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--spacing-4) var(--spacing-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: var(--font-size-lg);
+  color: var(--color-text);
+}
+
+/* Navegação desktop */
+.navDesktop {
+  display: none;
+  align-items: center;
+  gap: var(--spacing-8);
+}
+
+.navLink {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: var(--transition-colors);
+}
+
+.navLink:hover {
+  color: var(--color-text);
+}
+
+/* Zona direita */
+.rightZone {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+/* Ícones sociais desktop */
+.socialDesktop {
+  display: none;
+  align-items: center;
+  gap: var(--spacing-6);
+}
+
+.socialLink {
+  color: var(--color-text-subtle);
+  text-decoration: none;
+  transition: var(--transition-colors);
+  display: flex;
+  align-items: center;
+}
+
+.socialLink:hover {
+  color: var(--color-text);
+}
+
+.socialLinkLinkedin:hover {
+  color: var(--color-primary);
+}
+
+/* Botão hamburguer */
+.hamburger {
+  padding: var(--spacing-2);
+  border-radius: var(--border-radius);
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  transition: var(--transition-colors);
+}
+
+.hamburger:hover {
+  background-color: var(--color-bg-hover);
+}
+
+/* Menu mobile */
+.menuMobile {
+  border-top: 1px solid var(--color-border);
+  padding: var(--spacing-4) var(--spacing-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.navMobile {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.navLinkMobile {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  padding: var(--spacing-1) 0;
+  transition: var(--transition-colors);
+}
+
+.navLinkMobile:hover {
+  color: var(--color-text);
+}
+
+.socialMobile {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-6);
+  padding-top: var(--spacing-2);
+  border-top: 1px solid var(--color-border);
+}
+
+/* Breakpoint tablet+ */
+@media (min-width: 768px) {
+  .navDesktop {
+    display: flex;
+  }
+
+  .socialDesktop {
+    display: flex;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .menuMobile {
+    display: none;
+  }
+}

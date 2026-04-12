@@ -14,7 +14,7 @@ Consolidar habilidades reais de desenvolvimento React aplicando conceitos de:
 - Separação de responsabilidades (cada arquivo tem uma única função)
 - Gerenciamento de estado com **Hooks** e **Context API**
 - Roteamento com **React Router DOM**
-- Estilização **Mobile-First** com **Tailwind CSS**
+- Estilização **Mobile-First** com **CSS Modules**
 
 O resultado final é um portfólio online para apresentar projetos e experiência profissional.
 
@@ -26,7 +26,7 @@ O resultado final é um portfólio online para apresentar projetos e experiênci
 | ------------- | --------------------- | ------------------------------------------ |
 | Framework     | React 19 (via Vite)   | Mercado principal, projeto de trabalho     |
 | Roteamento    | React Router DOM v7   | Padrão da indústria para SPAs em React     |
-| Estilização   | Tailwind CSS v4       | Utility-first, ótimo para aprender layout  |
+| Estilização   | CSS Modules           | Escopo local por componente, sem dependência externa |
 | Estado Global | Context API           | Suficiente para o escopo (tema dark/light) |
 | Estado Local  | useState / useEffect  | Hooks nativos, sem biblioteca externa      |
 | Linting       | ESLint                | Qualidade e consistência de código         |

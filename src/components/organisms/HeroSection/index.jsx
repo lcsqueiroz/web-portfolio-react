@@ -1,5 +1,6 @@
 import Button from '../../atoms/Button';
 import { personal } from '../../../constants/personal';
+import styles from './index.module.css';
 
 const HeroSection = () => {
   const handleCTAClick = () => {
@@ -11,26 +12,21 @@ const HeroSection = () => {
   };
 
   return (
-    <section
-      id="hero"
-      className="min-h-screen flex items-center max-w-5xl mx-auto px-6 py-16"
-    >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center w-full">
+    <section id="hero" className={styles.section}>
+      <div className={styles.grid}>
         {/* Coluna esquerda — Texto + CTA */}
-        <div className="flex flex-col gap-6">
-          <div className="flex flex-col gap-0.5">
-            <span className="text-gray-500 text-lg leading-none">
-              Olá, me chamo
-            </span>
-            <h1 className="text-4xl  md:text-5xl font-bold text-gray-900 leading-tight">
-              <span className="text-blue-500">{personal.name}</span>
+        <div className={styles.textCol}>
+          <div className={styles.heading}>
+            <span className={styles.greeting}>Olá, me chamo</span>
+            <h1 className={styles.name}>
+              <span className={styles.nameHighlight}>{personal.name}</span>
             </h1>
-            <p className="text-xl font-medium text-gray-700">{personal.role}</p>
+            <p className={styles.role}>{personal.role}</p>
           </div>
 
-          <p className="text-gray-500 leading-relaxed">{personal.bio}</p>
+          <p className={styles.bio}>{personal.bio}</p>
 
-          <div className="flex items-center gap-6">
+          <div className={styles.cta}>
             <Button label="Ver Projetos" onClick={handleCTAClick} />
             <Button
               label="Entre em contato"
@@ -40,14 +36,13 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Coluna direita — Foto + links */}
-        <div className="flex flex-col items-center gap-6">
-          {/* Foto */}
-          <div className="w-72 h-72 md:w-80 md:h-80">
+        {/* Coluna direita — Foto */}
+        <div className={styles.photoCol}>
+          <div className={styles.photoWrapper}>
             <img
               src={personal.photoUrl}
               alt={`Foto de ${personal.name}`}
-              className="w-full h-full rounded-full object-cover"
+              className={styles.photo}
             />
           </div>
         </div>
