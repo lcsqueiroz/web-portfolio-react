@@ -60,7 +60,7 @@ Este documento detalha o plano de desenvolvimento dividido por semanas, com meta
 
 ### Tarefas
 
-- [ ] Criar atom `Tag`
+- [x] Criar atom `Tag`
 - [ ] Criar molecule `ProjectCard` com renderização condicional do botão Demo
 - [ ] Criar molecule `FilterButton` com estado visual ativo/inativo
 - [ ] Criar `hooks/useFilter.js` com lógica de filtragem e derivação de tags
