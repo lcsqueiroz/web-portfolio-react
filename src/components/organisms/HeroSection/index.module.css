@@ -27,7 +27,7 @@
 .heading {
   display: flex;
   flex-direction: column;
-  gap: 0.125rem;
+  gap: var(--spacing-px);
 }
 
 .greeting {
