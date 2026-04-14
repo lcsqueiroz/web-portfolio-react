@@ -16,51 +16,52 @@ const Footer = () => {
           <div className={styles.description}>
             <p className={styles.descriptionText}>{personal.bio}</p>
           </div>
+          <div className={styles.columsContainer}>
+            {/* Navegação */}
+            <div className={styles.column}>
+              <h5 className={styles.columnTitle}>Navegação</h5>
+              <nav className={styles.linkList}>
+                {navLinks.map((link) => (
+                  <a key={link.href} href={link.href} className={styles.link}>
+                    {link.label}
+                  </a>
+                ))}
+              </nav>
+            </div>
 
-          {/* Navegação */}
-          <div className={styles.column}>
-            <h5 className={styles.columnTitle}>Navegação</h5>
-            <nav className={styles.linkList}>
-              {navLinks.map((link) => (
-                <a key={link.href} href={link.href} className={styles.link}>
-                  {link.label}
+            {/* Contato */}
+            <div className={styles.column}>
+              <h5 className={styles.columnTitle}>Contato</h5>
+              <div className={styles.linkList}>
+                <a
+                  href={personal.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.contactLink}
+                >
+                  <FaGithub size={16} />
+                  GitHub
                 </a>
-              ))}
-            </nav>
-          </div>
-
-          {/* Contato */}
-          <div className={styles.column}>
-            <h5 className={styles.columnTitle}>Contato</h5>
-            <div className={styles.linkList}>
-              <a
-                href={personal.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.contactLink}
-              >
-                <FaGithub size={16} />
-                GitHub
-              </a>
-              <a
-                href={personal.linkedinUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.contactLink}
-              >
-                <FaLinkedin size={16} />
-                LinkedIn
-              </a>
-              <a
-                href={personal.emailUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="E-mail"
-                className={styles.contactLink}
-              >
-                <FaGoogle size={16} />
-                E-mail
-              </a>
+                <a
+                  href={personal.linkedinUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.contactLink}
+                >
+                  <FaLinkedin size={16} />
+                  LinkedIn
+                </a>
+                <a
+                  href={personal.emailUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="E-mail"
+                  className={styles.contactLink}
+                >
+                  <FaGoogle size={16} />
+                  E-mail
+                </a>
+              </div>
             </div>
           </div>
         </div>

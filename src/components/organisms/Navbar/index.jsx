@@ -8,9 +8,6 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
 
-  const handleMenuToggle = () => setIsMenuOpen((prev) => !prev);
-  const handleMenuClose = () => setIsMenuOpen(false);
-
   useEffect(() => {
     const sections = navLinks
       .map((link) => document.querySelector(link.href))
@@ -30,6 +27,9 @@ const Navbar = () => {
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
   }, []);
+
+  const handleMenuToggle = () => setIsMenuOpen((prev) => !prev);
+  const handleMenuClose = () => setIsMenuOpen(false);
 
   return (
     <header className={styles.header}>
