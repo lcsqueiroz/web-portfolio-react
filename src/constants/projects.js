@@ -29,6 +29,16 @@ const projects = [
     deployUrl: 'https://pagina-seguranca-da-informacao-8l8dbz1bq.vercel.app/',
     imageUrl: null,
   },
+  {
+    id: 4,
+    title: 'Gestão de pagamentos de boletos',
+    description:
+      'Plafatorma com o objetivo de centralizar o envio de boletos para pagamentos de mensalidades. O projeto faz parte da grade do curso da Faculdade de Ciências da Computação.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'N8N'],
+    repoUrl: 'https://github.com/lcsqueiroz/automation-UniversityExam-n8n',
+    deployUrl: null,
+    imageUrl: null,
+  },
 ];
 
 export default projects;
