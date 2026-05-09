@@ -19,6 +19,11 @@ const skills = [
     name: 'React',
     category: 'frontend',
   },
+  {
+    id: 5,
+    name: 'N8N',
+    category: 'automation',
+  },
 ];
 
 export default skills;

@@ -61,10 +61,10 @@ Este documento detalha o plano de desenvolvimento dividido por semanas, com meta
 ### Tarefas
 
 - [x] Criar atom `Tag`
-- [ ] Criar molecule `ProjectCard` com renderização condicional do botão Demo
-- [ ] Criar molecule `FilterButton` com estado visual ativo/inativo
-- [ ] Criar `hooks/useFilter.js` com lógica de filtragem e derivação de tags
-- [ ] Criar organism `ProjectsSection` consumindo hook e constantes
+- [x] Criar molecule `ProjectCard` com renderização condicional do botão Demo
+- [x] Criar molecule `FilterButton` com estado visual ativo/inativo
+- [x] Criar `hooks/useFilter.js` com lógica de filtragem e derivação de tags
+- [x] Criar organism `ProjectsSection` consumindo hook e constantes
 - [ ] Criar organism `AboutSection` com skills carregadas de `constants/skills.js`
 - [ ] Montar `pages/Home` compondo os organisms criados até agora
 
